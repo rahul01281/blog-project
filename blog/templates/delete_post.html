@@ -4,6 +4,8 @@
 
 {% block content%}
 
+{% if user.is_authenticated %}
+
 <h1>Delete: {{ post.title }}</h1>
 <p>{{ post.body | slice:":200" }}</p>
 <br><br>
@@ -16,5 +18,13 @@
         <a href="{% url 'article_detail' post.pk %}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
+
+{% else %}
+
+<br>
+
+<h5>You are not allowed to delete this post.</h5>
+
+{% endif %}
 
 {% endblock %}

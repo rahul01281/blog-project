@@ -4,6 +4,8 @@
 
 {% block content%}
 
+{% if user.is_authenticated %}
+
 <h1>Update Post...</h1>
 <br><br>
 <div class="form-group">
@@ -14,5 +16,13 @@
         <a href="{% url 'article_detail' post.pk %}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
+
+{% else %}
+
+<br>
+
+<h5>You are not allowed to edit this post.</h5>
+
+{% endif %}
 
 {% endblock %}

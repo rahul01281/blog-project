@@ -6,6 +6,8 @@
 
 {% if user.is_authenticated %}
 
+{% if user.id == post.author.id %}
+
 <h1>Update Post...</h1>
 <br><br>
 <div class="form-group">
@@ -22,6 +24,14 @@
 <br>
 
 <h5>You are not allowed to edit this post.</h5>
+
+{% endif %}
+
+{% else %}
+
+<br>
+
+<h5><a href="{% url 'login' %}">Login Here</a> to edit this post.</h5>
 
 {% endif %}
 

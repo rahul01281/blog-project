@@ -4,6 +4,7 @@
 
 {% block content %}
 
+
 <h1>{{ post.title }}</h1>
 <p>By: {{ post.author.first_name }} {{ post.author.last_name }} - <small>{{ post.post_date }}</small></p>
 
@@ -17,8 +18,12 @@
 
 {% if user.is_authenticated %}
 
+{% if user.id == post.author.id %}
+
 <a href="{% url 'update_post' post.pk %}" class="btn btn-secondary">Edit</a>
 <a href="{% url 'delete_post' post.pk %}" class="btn btn-danger">Delete</a>
+
+{% endif %}
 
 {% endif %}
 

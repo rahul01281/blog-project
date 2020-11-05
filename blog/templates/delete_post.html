@@ -6,6 +6,8 @@
 
 {% if user.is_authenticated %}
 
+{% if user.id == post.author.id %}
+
 <h1>Delete: {{ post.title }}</h1>
 <p>{{ post.body | slice:":200" }}</p>
 <br><br>
@@ -24,6 +26,14 @@
 <br>
 
 <h5>You are not allowed to delete this post.</h5>
+
+{% endif %}
+
+{% else %}
+
+<br>
+
+<h5><a href="{% url 'login' %}">Login Here</a> to delete this post.</h5>
 
 {% endif %}
 

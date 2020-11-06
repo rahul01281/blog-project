@@ -12,6 +12,7 @@ class Post(models.Model):
     body = RichTextField(blank=True, null=True)
     post_date = models.DateField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name="blog_post")
+    header_image = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         return self.title + '|' + str(self.author)

@@ -82,7 +82,7 @@
       </div>
       <div class="col-md-10">
         <div class="card-body">
-          <h5 class="card-title">{{ post.author.first_name }} {{ post.author.last_name }}</h5>
+          <a href="{% url 'user_profile' post.author.userprofile.id %}"><h5 class="card-title">{{ post.author.first_name }} {{ post.author.last_name }}</h5></a>
           <p class="small text-muted">
               {% if post.author.userprofile.facebook_url %}
               <a href="{{ post.author.userprofile.facebook_url }}"><img src="https://www.flaticon.com/svg/static/icons/svg/1384/1384021.svg" width="20" height="20"></a>

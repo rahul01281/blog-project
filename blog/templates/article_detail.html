@@ -42,11 +42,11 @@
 
     {% if liked %}
 
-    <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-danger btn-sm">Unlike</button>
+    <button type="submit" name="post_id" value="{{ post.id }}"><img src="https://www.flaticon.com/svg/static/icons/svg/25/25237.svg" width="20" height="20"></button>
     
     {% else %}
 
-    <button type="submit" name="post_id" value="{{ post.id }}" class="btn btn-info btn-sm">Like</button>
+    <button type="submit" name="post_id" value="{{ post.id }}"><img src="https://www.flaticon.com/svg/static/icons/svg/25/25297.svg" width="20" height="20"></button>
     
     {% endif %}
 
